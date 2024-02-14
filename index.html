@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Валентинка</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding-top: 50px;
+    background-color: #ffe0f0; /* Нежно розовый фон */
+    color: #333;
+  }
+  .valentine-photo, .question-photo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  #yesButton, #noButton {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #ff88aa;
+    color: white;
+    outline: none; /* Убирает контур при фокусе на кнопке */
+  }
+  #noButton {
+    position: absolute; /* Добавлено абсолютное позиционирование */
+    transform: translate(-50%, -50%); /* Центрирует кнопку относительно её новой позиции */
+  }
+  #noButton:hover {
+    background-color: #ffaacd;
+  }
+</style>
+</head>
+<body>
+  <img src="https://images.prom.ua/1555509463_w640_h640_1555509463.jpg" alt="Валентинка" class="question-photo"> <!-- Вставленное изображение -->
+  <h2>будешь ли ты моей валентинкой?</h2>
+  <button id="yesButton" onclick="window.location='yes_page.html';">да</button>
+  <button id="noButton">нет</button>
+
+  <script>
+    document.getElementById('noButton').addEventListener('mouseover', function() {
+      var x = Math.random() * (window.innerWidth - this.clientWidth);
+      var y = Math.random() * (window.innerHeight - this.clientHeight);
+      this.style.left = x + 'px';
+      this.style.top = y + 'px';
+    });
+  </script>
+</body>
+</html>
